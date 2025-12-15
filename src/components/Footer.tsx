@@ -6,10 +6,10 @@ const Footer = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/80 to-primary flex items-center justify-center shadow-lg">
-              <span className="text-primary-foreground font-serif text-xl font-semibold">Т</span>
+              <span className="text-primary-foreground font-serif text-xl font-semibold">0</span>
             </div>
             <span className="font-serif text-xl font-medium text-foreground">
-              Трансформа
+              Точка Ноль
             </span>
           </div>
 
@@ -31,7 +31,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground">
-            © 2024 Трансформа
+            © 2024 Точка Ноль
           </p>
         </div>
       </div>
