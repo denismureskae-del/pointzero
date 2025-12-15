@@ -2,87 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Pastel Cloud Palette */
+    --background: 210 30% 97%;
+    --foreground: 215 25% 27%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 40% 98%;
+    --card-foreground: 215 25% 27%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 40% 98%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Azure-blue primary */
+    --primary: 205 70% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Soft gray-blue secondary */
+    --secondary: 210 25% 92%;
+    --secondary-foreground: 215 25% 35%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 15% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Light azure accent */
+    --accent: 195 60% 85%;
+    --accent-foreground: 205 50% 30%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 205 70% 50%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Glassmorphism tokens */
+    --glass-bg: 210 40% 98% / 0.6;
+    --glass-border: 210 30% 95% / 0.8;
+    --glass-blur: 20px;
+    
+    /* Cloud gradient colors */
+    --cloud-1: 210 30% 97%;
+    --cloud-2: 200 35% 92%;
+    --cloud-3: 195 40% 88%;
+    --cloud-azure: 205 50% 80%;
+    --cloud-white: 0 0% 100%;
+
+    /* Animation durations */
+    --animation-slow: 25s;
+    --animation-medium: 18s;
+    --animation-fast: 12s;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 215 35% 12%;
+    --foreground: 210 30% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 30% 15%;
+    --card-foreground: 210 30% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 30% 15%;
+    --popover-foreground: 210 30% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 200 65% 60%;
+    --primary-foreground: 215 35% 12%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 25% 22%;
+    --secondary-foreground: 210 25% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 25% 20%;
+    --muted-foreground: 210 20% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 200 40% 30%;
+    --accent-foreground: 200 50% 85%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 215 25% 22%;
+    --input: 215 25% 22%;
+    --ring: 200 65% 60%;
+
+    --glass-bg: 215 30% 15% / 0.7;
+    --glass-border: 215 25% 25% / 0.6;
+
+    --cloud-1: 215 35% 12%;
+    --cloud-2: 210 30% 18%;
+    --cloud-3: 205 25% 22%;
+    --cloud-azure: 200 35% 25%;
+    --cloud-white: 210 20% 30%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -99,7 +119,199 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer components {
+  /* Glassmorphism base */
+  .glass {
+    @apply backdrop-blur-xl border border-glass-border;
+    background: hsl(var(--glass-bg));
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+  }
+
+  .glass-strong {
+    @apply glass;
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(30px) saturate(180%);
+  }
+
+  .glass-strong::before {
+    opacity: 0.05;
+  }
+
+  /* Animated cloud background */
+  .cloud-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(
+      180deg,
+      hsl(var(--cloud-white)) 0%,
+      hsl(var(--cloud-1)) 30%,
+      hsl(var(--cloud-2)) 60%,
+      hsl(var(--cloud-azure)) 100%
+    );
+  }
+
+  .cloud-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: float linear infinite;
+  }
+
+  .cloud-blob-1 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, hsl(200 50% 85% / 0.8) 0%, transparent 70%);
+    top: -15%;
+    left: -10%;
+    animation-duration: 30s;
+  }
+
+  .cloud-blob-2 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, hsl(210 40% 90% / 0.7) 0%, transparent 70%);
+    top: 15%;
+    right: -15%;
+    animation-duration: 25s;
+    animation-delay: -5s;
+  }
+
+  .cloud-blob-3 {
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, hsl(0 0% 100% / 0.6) 0%, transparent 60%);
+    bottom: -25%;
+    left: 25%;
+    animation-duration: 35s;
+    animation-delay: -10s;
+  }
+
+  .cloud-blob-4 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, hsl(195 55% 82% / 0.7) 0%, transparent 70%);
+    top: 45%;
+    left: 5%;
+    animation-duration: 20s;
+    animation-delay: -3s;
+  }
+
+  .cloud-blob-5 {
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, hsl(205 45% 88% / 0.65) 0%, transparent 65%);
+    bottom: 5%;
+    right: 0%;
+    animation-duration: 28s;
+    animation-delay: -8s;
+  }
+
+  /* Text styles */
+  .heading-display {
+    @apply text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.1;
+  }
+
+  .heading-section {
+    @apply text-3xl md:text-4xl font-medium tracking-tight;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.2;
+  }
+
+  .text-body {
+    @apply text-base md:text-lg font-light leading-relaxed;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Smooth scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .border-glass-border {
+    border-color: hsl(var(--glass-border));
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  75% {
+    transform: translate(40px, 10px) scale(1.02);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }
