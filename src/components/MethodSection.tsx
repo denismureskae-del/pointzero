@@ -1,26 +1,26 @@
 import GlassCard from "@/components/GlassCard";
-import { Search, MessageCircle, Puzzle, Heart } from "lucide-react";
+import { Eye, MapPin, Compass, Play } from "lucide-react";
 
 const methods = [
   {
-    icon: Search,
-    title: "Диагностика",
-    description: "Глубокий разбор мышления, паттернов и реальных блоков.",
+    icon: Eye,
+    title: "Точно отражаю",
+    description: "твою реальную конфигурацию",
   },
   {
-    icon: MessageCircle,
-    title: "Отражение",
-    description: "Я называю то, что ты чувствуешь, но не формулируешь.",
+    icon: MapPin,
+    title: "Помогаю увидеть",
+    description: "где ты застряла и почему",
   },
   {
-    icon: Puzzle,
-    title: "Сборка",
-    description: "Мы соединяем смысл, деньги, реализацию и образ жизни.",
+    icon: Compass,
+    title: "Собираю направление",
+    description: "которое тебе действительно подходит",
   },
   {
-    icon: Heart,
-    title: "Поддержка",
-    description: "Без давления. Без игры в «гуру». Чётко и по-человечески.",
+    icon: Play,
+    title: "Помогаю начать движение",
+    description: "без давления и самообмана",
   },
 ];
 
@@ -32,18 +32,12 @@ const MethodSection = () => {
           {/* Text Content */}
           <div className="space-y-8">
             <h2 className="heading-section text-foreground">
-              Моя работа — не мотивация. 
-              <span className="text-primary"> Это навигация.</span>
+              Как я работаю
             </h2>
             
             <div className="space-y-4 text-body text-muted-foreground">
               <p>
-                Я не даю универсальных советов. Я помогаю увидеть твою реальную 
-                конфигурацию: мышление, эмоции, стиль решений, ограничения и точки роста.
-              </p>
-              <p>
-                После этого появляется: ясность, внутренняя тишина, конкретные шаги, 
-                ощущение «я на своём месте».
+                Я не веду за руку и не предлагаю универсальных решений.
               </p>
             </div>
 
