@@ -1,33 +1,33 @@
 import GlassCard from "@/components/GlassCard";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, User, Palette, Route } from "lucide-react";
+import { ArrowRight, Compass, Route, Lightbulb } from "lucide-react";
 
 const services = [
   {
-    icon: User,
-    title: "Индивидуальная работа 1-на-1",
-    description: "Глубинный диалог, прояснение жизненного и профессионального направления, сборка мышления и решений.",
+    icon: Compass,
+    title: "Индивидуальная навигация 1-на-1",
+    description: "Разбор текущей точки, выход из тупика, сборка направления.",
     intensity: "strong" as const,
   },
   {
-    icon: Palette,
-    title: "Эстетическое и смысловое консультирование",
-    description: "Работа с образом себя, внутренний конфликт и самореализация, выбор, который «чувствуется правильным».",
+    icon: Route,
+    title: "Стратегия перехода",
+    description: "Для смены этапа жизни, роли, профессии или формата бизнеса.",
     intensity: "medium" as const,
   },
   {
-    icon: Route,
-    title: "Стратегия жизни и переходов",
-    description: "Выход из тупика, смена этапа, решения без давления и насилия над собой.",
+    icon: Lightbulb,
+    title: "Смысл и реализация",
+    description: "Когда важно соединить деньги, внутреннее ощущение правильности и реальную жизнь.",
     intensity: "medium" as const,
   },
 ];
 
 const formatItems = [
-  "Индивидуально",
-  "Онлайн / офлайн",
+  "Формат подбирается индивидуально",
   "Конфиденциально",
-  "Без записи и трансляций",
+  "Живая работа",
+  "Без записи и шоу",
 ];
 
 const ServicesSection = () => {
@@ -36,11 +36,8 @@ const ServicesSection = () => {
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="heading-section text-foreground mb-4">
-            Услуги
+            Форматы работы
           </h2>
-          <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-            Каждый формат подбирается индивидуально под твой запрос и текущую ситуацию.
-          </p>
         </div>
 
         {/* Services Grid */}
@@ -60,10 +57,6 @@ const ServicesSection = () => {
               <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow">
                 {service.description}
               </p>
-              <Button variant="glass" size="sm" className="w-fit">
-                Подробнее
-                <ArrowRight className="w-4 h-4" />
-              </Button>
             </GlassCard>
           ))}
         </div>

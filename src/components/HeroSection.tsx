@@ -19,7 +19,7 @@ const HeroSection = () => {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/30 backdrop-blur-lg border border-white/40">
                 <Sparkles className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium text-foreground/80">
-                  Навигация к себе настоящей
+                  Навигация переходов
                 </span>
               </div>
 
@@ -27,13 +27,14 @@ const HeroSection = () => {
                 Ты не сломана. 
                 <br />
                 <span className="text-primary">
-                  Ты просто живёшь не из своего места.
+                  Ты просто застряла между этапами.
                 </span>
               </h1>
 
               <p className="text-body text-muted-foreground max-w-xl">
-                Я помогаю вернуть ясность, опору и направление — без насилия над собой, 
-                иллюзий и чужих сценариев. Путь от точки ноль к новой форме.
+                Я работаю с людьми, которые чувствуют: старая версия жизни больше не работает, 
+                а новая ещё не оформлена. Моя работа — про переход. Из тупика — в направление. 
+                Из шума — в ясность. Из чужих сценариев — в свою форму жизни.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -83,8 +84,8 @@ const HeroSection = () => {
 
                 {/* Floating badge */}
                 <div className="absolute -bottom-4 -left-4 md:bottom-4 md:-left-8 px-6 py-4 rounded-2xl bg-white/40 backdrop-blur-xl border border-white/50 shadow-xl animate-float-slow">
-                  <p className="text-sm font-medium text-foreground">Глубинная работа</p>
-                  <p className="text-xs text-muted-foreground">Индивидуально</p>
+                  <p className="text-sm font-medium text-foreground">от застревания</p>
+                  <p className="text-xs text-muted-foreground">к живой форме жизни</p>
                 </div>
               </div>
             </div>
