@@ -61,7 +61,11 @@ const ContactForm = () => {
         </form>
       </GlassCard>
 
-      <ContactModal open={isModalOpen} onOpenChange={setIsModalOpen} />
+      <ContactModal 
+        open={isModalOpen} 
+        onOpenChange={setIsModalOpen} 
+        formData={formData}
+      />
     </>
   );
 };
