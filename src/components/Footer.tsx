@@ -1,3 +1,5 @@
+import logo from "@/assets/logo.jpg";
+
 const Footer = () => {
   return (
     <footer className="py-12 border-t border-white/20">
@@ -5,9 +7,11 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/80 to-primary flex items-center justify-center shadow-lg">
-              <span className="text-primary-foreground font-serif text-xl font-semibold">0</span>
-            </div>
+            <img 
+              src={logo} 
+              alt="Точка Ноль" 
+              className="w-10 h-10 rounded-xl shadow-lg object-cover"
+            />
             <span className="font-serif text-xl font-medium text-foreground">
               Точка Ноль
             </span>
