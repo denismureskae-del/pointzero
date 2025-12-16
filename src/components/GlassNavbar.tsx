@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
+import logo from "@/assets/logo.jpg";
 
 const navLinks = [
   { href: "#about", label: "О себе" },
@@ -49,9 +50,11 @@ const GlassNavbar = () => {
             <div className="relative flex items-center justify-between px-6 py-4">
               {/* Logo */}
               <a href="#" className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/80 to-primary flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105">
-                  <span className="text-primary-foreground font-serif text-xl font-semibold">0</span>
-                </div>
+                <img 
+                  src={logo} 
+                  alt="Точка Ноль" 
+                  className="w-10 h-10 rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105 object-cover"
+                />
                 <span className="font-serif text-xl font-medium text-foreground">
                   Точка Ноль
                 </span>
