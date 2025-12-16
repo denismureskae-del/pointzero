@@ -1,72 +1,47 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import GlassCard from "@/components/GlassCard";
-import ContactModal from "@/components/ContactModal";
-import { ArrowRight } from "lucide-react";
+import { MessageCircle, Send } from "lucide-react";
 
 const ContactForm = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    contact: "",
-    message: ""
-  });
+  const handleWhatsApp = () => {
+    window.open("https://wa.me/79680601602", "_blank");
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsModalOpen(true);
+  const handleTelegram = () => {
+    window.open("https://t.me/mureskae", "_blank");
   };
 
   return (
-    <>
-      <GlassCard className="p-8 md:p-12" intensity="strong" hover={false}>
-        <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-6 text-center">
-          Запись на консультацию
-        </h3>
-        
-        <form onSubmit={handleSubmit} className="space-y-6 max-w-md mx-auto">
-          <div>
-            <Input
-              placeholder="Ваше имя"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="h-12 bg-white/30 backdrop-blur-lg border-white/40 placeholder:text-foreground/50"
-            />
-          </div>
-          
-          <div>
-            <Input
-              placeholder="Телефон или Telegram"
-              value={formData.contact}
-              onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-              className="h-12 bg-white/30 backdrop-blur-lg border-white/40 placeholder:text-foreground/50"
-            />
-          </div>
-          
-          <div>
-            <Textarea
-              placeholder="С чем хотите поработать?"
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="min-h-[120px] bg-white/30 backdrop-blur-lg border-white/40 placeholder:text-foreground/50 resize-none"
-            />
-          </div>
-          
-          <Button type="submit" variant="glass-solid" size="xl" className="w-full group">
-            Связаться
-            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </Button>
-        </form>
-      </GlassCard>
+    <GlassCard className="p-8 md:p-12" intensity="strong" hover={false}>
+      <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-6 text-center">
+        Запись на консультацию
+      </h3>
+      <p className="text-center text-muted-foreground mb-8">
+        Выберите удобный способ связи
+      </p>
+      
+      <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <Button
+          variant="glass"
+          size="xl"
+          className="flex-1 justify-center gap-3"
+          onClick={handleWhatsApp}
+        >
+          <MessageCircle className="w-5 h-5 text-green-600" />
+          WhatsApp
+        </Button>
 
-      <ContactModal 
-        open={isModalOpen} 
-        onOpenChange={setIsModalOpen} 
-        formData={formData}
-      />
-    </>
+        <Button
+          variant="glass"
+          size="xl"
+          className="flex-1 justify-center gap-3"
+          onClick={handleTelegram}
+        >
+          <Send className="w-5 h-5 text-blue-500" />
+          Telegram
+        </Button>
+      </div>
+    </GlassCard>
   );
 };
 
