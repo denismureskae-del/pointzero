@@ -2,19 +2,35 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Send } from "lucide-react";
 
+interface FormData {
+  name: string;
+  contact: string;
+  message: string;
+}
+
 interface ContactModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  formData?: FormData;
 }
 
-const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
+const ContactModal = ({ open, onOpenChange, formData }: ContactModalProps) => {
+  const buildMessage = () => {
+    if (formData && (formData.name || formData.contact || formData.message)) {
+      return `Здравствуйте, Меня зовут ${formData.name || "—"}, Мой контакт ${formData.contact || "—"}, С чем хотите поработать? ${formData.message || "—"}`;
+    }
+    return "Здравствуйте! Хочу записаться на консультацию.";
+  };
+
   const handleWhatsApp = () => {
-    window.open("https://wa.me/79680601602", "_blank");
+    const message = encodeURIComponent(buildMessage());
+    window.open(`https://wa.me/79680601602?text=${message}`, "_blank");
     onOpenChange(false);
   };
 
   const handleTelegram = () => {
-    window.open("https://t.me/mureskae", "_blank");
+    const message = encodeURIComponent(buildMessage());
+    window.open(`https://t.me/mureskae?text=${message}`, "_blank");
     onOpenChange(false);
   };
 
@@ -32,7 +48,7 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
             className="w-full justify-start gap-4"
             onClick={handleWhatsApp}
           >
-            <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center">
+            <div className="w-12 h-12 rounded-md bg-green-500/20 flex items-center justify-center">
               <MessageCircle className="w-6 h-6 text-green-600" />
             </div>
             <div className="text-left">
@@ -47,7 +63,7 @@ const ContactModal = ({ open, onOpenChange }: ContactModalProps) => {
             className="w-full justify-start gap-4"
             onClick={handleTelegram}
           >
-            <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center">
+            <div className="w-12 h-12 rounded-md bg-blue-500/20 flex items-center justify-center">
               <Send className="w-6 h-6 text-blue-500" />
             </div>
             <div className="text-left">
