@@ -44,7 +44,7 @@ const HeroSection = () => {
                   className="group"
                   onClick={() => setIsModalOpen(true)}
                 >
-                  Записаться на встречу
+                  Начать навигацию
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                 </Button>
                 <Button 

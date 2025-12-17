@@ -1,5 +1,5 @@
 import GlassCard from "@/components/GlassCard";
-import { Check } from "lucide-react";
+import { Check, X } from "lucide-react";
 
 const idealClient = [
   "чувствуешь, что переросла текущую жизнь или роль",
@@ -9,11 +9,33 @@ const idealClient = [
   "готова к честному взгляду и реальным шагам",
 ];
 
-const results = [
-  "внутренняя тишина",
-  "один ясный вектор вместо хаоса",
-  "ощущение «я знаю, что делать дальше»",
+const notForYou = [
+  {
+    title: "Быстрые лайфхаки и волшебные решения",
+    description: "Моя работа — про честность и глубину, а не про «как обмануть жизнь за 15 минут»."
+  },
+  {
+    title: "Спасения, опоры или роли «веди меня»",
+    description: "Я не беру ответственность за чужую жизнь и не веду за руку. Моё дело — дать направление, а не жить путь за тебя."
+  },
+  {
+    title: "Подтверждение старых убеждений",
+    description: "Если цель — доказать себе, что «всё плохо» или «я не могу иначе», — это не ко мне."
+  },
+  {
+    title: "Пожалеть, погладить по голове и подтвердить жертву",
+    description: "Я с уважением отношусь к чувствам, но моя работа — про ясность, а не про эмоциональные анестезии."
+  },
+  {
+    title: "Споры, сопротивление и попытки перетянуть меня на свою правду",
+    description: "Диалог возможен только с теми, кто открыт к честному взгляду."
+  },
+  {
+    title: "Иллюзии, эзотерические обещания и ожидание чуда",
+    description: "Я работаю с реальностью, мышлением и выбором. Не с магией."
+  }
 ];
+
 
 const AboutSection = () => {
   return (
@@ -39,7 +61,7 @@ const AboutSection = () => {
         </div>
 
         {/* Who it's for */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 mb-8">
           <GlassCard className="p-8" intensity="strong">
             <h3 className="font-serif text-2xl font-medium text-foreground mb-4">
               Кому это подходит
@@ -59,16 +81,20 @@ const AboutSection = () => {
           </GlassCard>
 
           <GlassCard className="p-8" intensity="medium">
-            <h3 className="font-serif text-2xl font-medium text-foreground mb-6">
-              После работы со мной появляется
+            <h3 className="font-serif text-2xl font-medium text-foreground mb-4">
+              С кем я не работаю
             </h3>
+            <p className="text-muted-foreground mb-6">Я не подойду, если ты ищешь:</p>
             <ul className="space-y-4">
-              {results.map((item, index) => (
+              {notForYou.map((item, index) => (
                 <li key={index} className="flex gap-3 items-start">
-                  <div className="w-5 h-5 rounded-full bg-accent flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-accent-foreground text-xs">✓</span>
+                  <div className="w-5 h-5 rounded-full bg-muted flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <X className="w-3 h-3 text-muted-foreground" />
                   </div>
-                  <span className="text-sm text-foreground/80 leading-relaxed">{item}</span>
+                  <div>
+                    <span className="text-sm text-foreground/90 font-medium">{item.title}</span>
+                    <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{item.description}</p>
+                  </div>
                 </li>
               ))}
             </ul>
