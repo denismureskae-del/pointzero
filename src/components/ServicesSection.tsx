@@ -8,7 +8,7 @@ const services = [
     title: "Индивидуальная навигация 1-на-1",
     description: "Разбор текущей точки, выход из тупика, сборка направления.",
     intensity: "strong" as const,
-    buttonText: "Запросить индивидуальную навигацию",
+    buttonText: "Запросить",
   },
   {
     icon: Route,
@@ -48,7 +48,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <GlassCard 
               key={index} 
-              className="p-8 flex flex-col"
+              className="p-8 flex flex-col h-full"
               intensity={service.intensity}
             >
               <div className="w-14 h-14 rounded-2xl bg-primary/15 flex items-center justify-center mb-6">

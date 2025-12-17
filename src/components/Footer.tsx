@@ -34,9 +34,14 @@ const Footer = () => {
           </nav>
 
           {/* Copyright */}
-          <p className="text-sm text-muted-foreground">
-            © 2024 Точка Ноль
-          </p>
+          <div className="text-center md:text-right">
+            <p className="text-sm text-muted-foreground">
+              Все права защищены. © 2025-2027
+            </p>
+            <p className="text-xs text-muted-foreground mt-1">
+              Ваши данные конфиденциальны и не подлежат разглашению. Гарантирована полная анонимность.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
