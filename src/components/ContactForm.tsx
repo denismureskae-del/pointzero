@@ -14,7 +14,7 @@ const ContactForm = () => {
   return (
     <GlassCard className="p-8 md:p-12" intensity="strong" hover={false}>
       <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-6 text-center">
-        Запись на консультацию
+        Начать навигацию
       </h3>
       <p className="text-center text-muted-foreground mb-8">
         Выберите удобный способ связи

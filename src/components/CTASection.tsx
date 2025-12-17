@@ -13,7 +13,7 @@ const CTASection = () => {
       <div className="container space-y-12">
         <GlassCard className="p-12 md:p-16 text-center" intensity="strong" hover={false}>
           <h2 className="heading-section text-foreground mb-6">
-            Запись на консультацию
+            Начать навигацию
           </h2>
           
           <p className="text-body text-muted-foreground max-w-xl mx-auto mb-10">
