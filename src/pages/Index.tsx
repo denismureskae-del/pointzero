@@ -1,7 +1,6 @@
 import CloudBackground from "@/components/CloudBackground";
 import GlassNavbar from "@/components/GlassNavbar";
 import HeroSection from "@/components/HeroSection";
-import ResonanceSection from "@/components/ResonanceSection";
 import MethodSection from "@/components/MethodSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -16,7 +15,6 @@ const Index = () => {
       
       <main>
         <HeroSection />
-        <ResonanceSection />
         <MethodSection />
         <AboutSection />
         <ServicesSection />
