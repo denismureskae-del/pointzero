@@ -8,18 +8,21 @@ const services = [
     title: "Индивидуальная навигация 1-на-1",
     description: "Разбор текущей точки, выход из тупика, сборка направления.",
     intensity: "strong" as const,
+    buttonText: "Запросить индивидуальную навигацию",
   },
   {
     icon: Route,
     title: "Стратегия перехода",
     description: "Для смены этапа жизни, роли, профессии или формата бизнеса.",
     intensity: "medium" as const,
+    buttonText: "Начать",
   },
   {
     icon: Lightbulb,
     title: "Смысл и реализация",
     description: "Когда важно соединить деньги, внутреннее ощущение правильности и реальную жизнь.",
     intensity: "medium" as const,
+    buttonText: "Войти в точку ясности",
   },
 ];
 
@@ -57,6 +60,14 @@ const ServicesSection = () => {
               <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-grow">
                 {service.description}
               </p>
+              <Button 
+                variant="glass" 
+                size="lg"
+                className="w-full mt-auto"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                {service.buttonText}
+              </Button>
             </GlassCard>
           ))}
         </div>
