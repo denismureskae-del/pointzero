@@ -2,71 +2,52 @@ import GlassCard from "@/components/GlassCard";
 import { Check, X } from "lucide-react";
 
 const idealClient = [
-  "чувствуешь, что переросла текущую жизнь или роль",
-  "много понимаешь, но не знаешь, куда именно идти дальше",
-  "устала «разбираться с собой» без движения",
-  "хочешь решений без насилия над собой",
-  "готова к честному взгляду и реальным шагам",
+  "ощущаешь внутреннее сопротивление, которое нельзя обойти",
+  "понимаешь, что прежние формы личности устарели",
+  "не ищешь «путь», а нуждаешься в точном сдвиге формы",
+  "готов принять результат как необратимый сдвиг, а не «урок»",
 ];
 
 const notForYou = [
   {
-    title: "Быстрые лайфхаки и волшебные решения",
-    description: "Моя работа — про честность и глубину, а не про «как обмануть жизнь за 15 минут»."
+    title: "Быстрых советов или инструкций",
+    description: "Это не про «как сделать за 15 минут»"
   },
   {
-    title: "Спасения, опоры или роли «веди меня»",
-    description: "Я не беру ответственность за чужую жизнь и не веду за руку. Моё дело — дать направление, а не жить путь за тебя."
+    title: "Объяснений или утешения",
+    description: "Я работаю с реальностью, а не с эмоциональными анестезиями"
   },
   {
-    title: "Подтверждение старых убеждений",
-    description: "Если цель — доказать себе, что «всё плохо» или «я не могу иначе», — это не ко мне."
+    title: "«Вести за руку»",
+    description: "Я не беру ответственность за чужую жизнь"
   },
   {
-    title: "Пожалеть, погладить по голове и подтвердить жертву",
-    description: "Я с уважением отношусь к чувствам, но моя работа — про ясность, а не про эмоциональные анестезии."
+    title: "Утвердить старые убеждения",
+    description: "Если цель — доказать себе, что «всё плохо» — это не ко мне"
   },
   {
-    title: "Споры, сопротивление и попытки перетянуть меня на свою правду",
-    description: "Диалог возможен только с теми, кто открыт к честному взгляду."
+    title: "Подтвердить жалость к себе",
+    description: "Моя работа — про честный взгляд на себя"
   },
-  {
-    title: "Иллюзии, эзотерические обещания и ожидание чуда",
-    description: "Я работаю с реальностью, мышлением и выбором. Не с магией."
-  }
 ];
 
+const afterResults = [
+  "исчезает груз неработающих схем",
+  "остаётся чистая конфигурация",
+  "появляются реальные выборы, без фантазий и иллюзий",
+];
 
 const AboutSection = () => {
   return (
     <section className="py-24" id="about">
       <div className="container">
-        {/* Who I Am - Role */}
-        <div className="max-w-4xl mx-auto text-center mb-20">
-          <h2 className="heading-section text-foreground mb-6">
-            Моя роль
-          </h2>
-          <p className="text-body text-muted-foreground mb-4">
-            Я не коуч. Не психолог в классическом смысле. 
-            Не мотивационный спикер и не гуру.
-          </p>
-          <p className="text-body text-foreground mb-4">
-            Моя ниша — <span className="text-primary font-medium">навигация жизненных и профессиональных переходов</span> 
-            {" "}на стыке мышления, смысла и реальности.
-          </p>
-          <p className="text-body text-muted-foreground">
-            Я работаю там, где старые ответы больше не работают, 
-            а новые ещё не найдены.
-          </p>
-        </div>
-
-        {/* Who it's for */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-8">
+        {/* Who it's for / not for */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-12">
           <GlassCard className="p-8" intensity="strong">
             <h3 className="font-serif text-2xl font-medium text-foreground mb-4">
-              Кому это подходит
+              Для кого это
             </h3>
-            <p className="text-muted-foreground mb-6">Если ты:</p>
+            <p className="text-muted-foreground mb-6">Это для тех, кто:</p>
             <ul className="space-y-4">
               {idealClient.map((item, index) => (
                 <li key={index} className="flex gap-3 items-start">
@@ -77,14 +58,15 @@ const AboutSection = () => {
                 </li>
               ))}
             </ul>
-            <p className="text-foreground mt-6 font-medium">— мы можем работать.</p>
+            <p className="text-foreground mt-6 font-medium">
+              Это работа только с теми, кто готов видеть себя честно.
+            </p>
           </GlassCard>
 
           <GlassCard className="p-8" intensity="medium">
             <h3 className="font-serif text-2xl font-medium text-foreground mb-4">
-              С кем я не работаю
+              Точка Ноль не для тех, кто хочет
             </h3>
-            <p className="text-muted-foreground mb-6">Я не подойду, если ты ищешь:</p>
             <ul className="space-y-4">
               {notForYou.map((item, index) => (
                 <li key={index} className="flex gap-3 items-start">
@@ -101,12 +83,24 @@ const AboutSection = () => {
           </GlassCard>
         </div>
 
-        {/* Value Statement */}
-        <GlassCard className="max-w-3xl mx-auto p-10 text-center" intensity="strong" hover={false}>
-          <p className="text-body text-foreground">
-            Это не про «исправить себя». 
-            <br />
-            <span className="text-primary font-medium">Это про перейти в следующую точку.</span>
+        {/* What happens after */}
+        <GlassCard className="max-w-3xl mx-auto p-10" intensity="strong" hover={false}>
+          <h3 className="font-serif text-2xl font-medium text-foreground mb-4 text-center">
+            Что происходит после
+          </h3>
+          <p className="text-body text-muted-foreground text-center mb-6">
+            После разговора со мной человек не возвращается к прежней форме. Потому что:
+          </p>
+          <ul className="space-y-3 max-w-md mx-auto mb-6">
+            {afterResults.map((item, index) => (
+              <li key={index} className="flex gap-3 items-center">
+                <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                <span className="text-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-body text-center">
+            <span className="text-primary font-medium">Ты остаёшься с собой, но без лишних форм.</span>
           </p>
         </GlassCard>
       </div>

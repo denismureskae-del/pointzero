@@ -16,15 +16,19 @@ const CTASection = () => {
       <div className="container">
         <GlassCard className="p-12 md:p-16 text-center" intensity="strong" hover={false}>
           <h2 className="heading-section text-foreground mb-6">
-            Начать навигацию
+            Как записаться
           </h2>
           
-          <p className="text-body text-muted-foreground max-w-xl mx-auto mb-8">
-            Первый разговор — не обязательство, а точка ясности.
+          <p className="text-body text-muted-foreground max-w-xl mx-auto mb-4">
+            Первый разговор — не обязательство.
+          </p>
+          
+          <p className="text-body text-foreground max-w-xl mx-auto mb-8">
+            Он — точка сдвига, которую можно пройти прямо сейчас.
           </p>
 
           <p className="text-foreground font-medium mb-6">
-            Выберите удобный способ связи
+            Выберите удобный способ связи:
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">

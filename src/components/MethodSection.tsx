@@ -1,26 +1,26 @@
 import GlassCard from "@/components/GlassCard";
-import { Eye, MapPin, Compass, Play } from "lucide-react";
+import { Target, Layers, Scissors, Eye } from "lucide-react";
 
-const methods = [
+const whatHappens = [
+  {
+    icon: Layers,
+    title: "Вскрываем смысловые модели",
+    description: "текущую конфигурацию мышления",
+  },
+  {
+    icon: Target,
+    title: "Выявляем устаревшее",
+    description: "конфигурации, которые больше не служат",
+  },
+  {
+    icon: Scissors,
+    title: "Снимаем лишние формы",
+    description: "оставляя ядро мышления и выбора",
+  },
   {
     icon: Eye,
-    title: "Точно отражаю",
-    description: "твою реальную конфигурацию",
-  },
-  {
-    icon: MapPin,
-    title: "Помогаю увидеть",
-    description: "где ты застряла и почему",
-  },
-  {
-    icon: Compass,
-    title: "Собираю направление",
-    description: "которое тебе действительно подходит",
-  },
-  {
-    icon: Play,
-    title: "Помогаю начать движение",
-    description: "без давления и самообмана",
+    title: "Сдвиг точки зрения",
+    description: "не процесс, а необратимое изменение",
   },
 ];
 
@@ -32,41 +32,56 @@ const MethodSection = () => {
           {/* Text Content */}
           <div className="space-y-8">
             <h2 className="heading-section text-foreground">
-              Как я работаю
+              Что это значит
             </h2>
             
             <div className="space-y-4 text-body text-muted-foreground">
               <p>
-                Я не веду за руку и не предлагаю универсальных решений.
+                Это не про «помочь тебе жить лучше».
+              </p>
+              <p>
+                Это не про «поддержку и сопровождение».
+              </p>
+              <p>
+                Это не про психологические советы.
+              </p>
+              <p className="text-foreground font-medium">
+                Это системная инженерная операция над формой личности — чтобы удалить неработающие структуры 
+                и оставить только то, что реально ты.
               </p>
             </div>
 
             <GlassCard className="p-6" intensity="light" hover={false}>
               <p className="text-foreground italic font-serif text-lg">
-                «Я не "веду за руку". Я ставлю зеркало, от которого невозможно отвернуться.»
+                «Такой разговор нарушает старую идентичность — и это норма, а не ошибка.»
               </p>
             </GlassCard>
           </div>
 
           {/* Method Cards */}
-          <div className="grid sm:grid-cols-2 gap-5">
-            {methods.map((method, index) => (
-              <GlassCard 
-                key={index} 
-                className="p-6"
-                intensity={index % 2 === 0 ? "medium" : "light"}
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-4">
-                  <method.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-serif text-xl font-medium text-foreground mb-2">
-                  {method.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {method.description}
-                </p>
-              </GlassCard>
-            ))}
+          <div className="space-y-6">
+            <h3 className="font-serif text-xl font-medium text-foreground mb-4">
+              Что происходит в разговоре
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-5">
+              {whatHappens.map((method, index) => (
+                <GlassCard 
+                  key={index} 
+                  className="p-6"
+                  intensity={index % 2 === 0 ? "medium" : "light"}
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-4">
+                    <method.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-serif text-xl font-medium text-foreground mb-2">
+                    {method.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {method.description}
+                  </p>
+                </GlassCard>
+              ))}
+            </div>
           </div>
         </div>
       </div>
