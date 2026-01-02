@@ -18,22 +18,22 @@ const HeroSection = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/30 backdrop-blur-lg border border-white/40">
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-foreground/80">
-                Навигация переходов
+                Life Form Engineering
               </span>
             </div>
 
             <h1 className="heading-display text-foreground">
-              Ты не сломана. 
+              Точка Ноль — 
               <br />
               <span className="text-primary">
-                Ты просто застряла между этапами.
+                Инженер формы личности
               </span>
             </h1>
 
             <p className="text-body text-muted-foreground max-w-xl">
-              <span className="font-semibold text-foreground">Denis:</span> Я работаю с людьми, которые чувствуют: старая версия жизни больше не работает, 
-              а новая ещё не оформлена. Моя работа — про переход. Из тупика — в направление. 
-              Из шума — в ясность. Из чужих сценариев — в свою форму жизни.
+              Точка Ноль — это не путь, не сопровождение и не мотивация. Это один точный сдвиг формы личности, 
+              после которого старые схемы мышления больше не работают, а человек остаётся с реальной конфигурацией себя. 
+              Ты не получаешь карту пути — ты получаешь очищенную форму, в которой старые ограничения исчезают навсегда.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -43,7 +43,7 @@ const HeroSection = () => {
                 className="group"
                 onClick={scrollToContact}
               >
-                Начать навигацию
+                Начать сдвиг
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button 
@@ -76,15 +76,15 @@ const HeroSection = () => {
                 />
                 <img
                   src="https://cdn.poehali.dev/files/photo_2025-11-11_16-02-37.jpeg"
-                  alt="Персональный навигатор"
+                  alt="Инженер формы личности"
                   className="w-full h-full object-cover"
                 />
               </div>
 
               {/* Floating badge */}
               <div className="absolute -bottom-4 -left-4 md:bottom-4 md:-left-8 px-6 py-4 rounded-2xl bg-white/40 backdrop-blur-xl border border-white/50 shadow-xl animate-float-slow">
-                <p className="text-sm font-medium text-foreground">от застревания</p>
-                <p className="text-xs text-muted-foreground">к живой форме жизни</p>
+                <p className="text-sm font-medium text-foreground">точка сдвига</p>
+                <p className="text-xs text-muted-foreground">необратимое изменение формы</p>
               </div>
             </div>
           </div>

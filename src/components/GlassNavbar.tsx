@@ -4,10 +4,9 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const navLinks = [
-  { href: "#about", label: "О себе" },
-  { href: "#method", label: "Метод" },
-  { href: "#services", label: "Услуги" },
-  { href: "#contact", label: "Запись" },
+  { href: "#method", label: "Что это" },
+  { href: "#about", label: "Для кого" },
+  { href: "#contact", label: "Записаться" },
 ];
 
 const GlassNavbar = () => {
@@ -73,7 +72,7 @@ const GlassNavbar = () => {
                 </a>
               ))}
               <Button variant="glass-solid" size="sm" onClick={scrollToContact}>
-                Начать путь
+                Начать сдвиг
               </Button>
             </div>
 
@@ -115,7 +114,7 @@ const GlassNavbar = () => {
                   scrollToContact();
                 }}
               >
-                Начать путь
+                Начать сдвиг
               </Button>
             </div>
           </div>
