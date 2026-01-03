@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
@@ -38,6 +39,12 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               Все права защищены. © 2025-2027
             </p>
+            <Link 
+              to="/legal" 
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
+            >
+              Правовые документы
+            </Link>
             <p className="text-xs text-muted-foreground mt-1">
               Ваши данные конфиденциальны и не подлежат разглашению. Гарантирована полная анонимность.
             </p>
