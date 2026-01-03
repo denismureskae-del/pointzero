@@ -15,6 +15,11 @@ const CTASection = () => {
     <section className="py-24" id="contact">
       <div className="container">
         <GlassCard className="p-12 md:p-16 text-center" intensity="strong" hover={false}>
+          <p className="text-body text-muted-foreground max-w-xl mx-auto mb-8">
+            Я не принимаю решений за человека и не задаю направление его жизни.
+            Моя работа заканчивается там, где появляется ясность.
+          </p>
+          
           <h2 className="heading-section text-foreground mb-6">
             Как записаться
           </h2>
