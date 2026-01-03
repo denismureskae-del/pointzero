@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const navLinks = [
-  { href: "#method", label: "Что это" },
-  { href: "#about", label: "Для кого" },
-  { href: "#contact", label: "Записаться" },
+  { href: "method", label: "Что это" },
+  { href: "about", label: "Для кого" },
+  { href: "contact", label: "Записаться" },
 ];
 
 const GlassNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,8 +24,23 @@ const GlassNavbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  const handleNavClick = (sectionId: string) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleLogoClick = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -49,7 +67,7 @@ const GlassNavbar = () => {
           
           <div className="relative flex items-center justify-between px-6 py-4">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-3 group">
+            <button onClick={handleLogoClick} className="flex items-center gap-3 group">
               <img 
                 src={logo} 
                 alt="Точка Ноль" 
@@ -58,20 +76,20 @@ const GlassNavbar = () => {
               <span className="font-serif text-xl font-medium text-foreground">
                 Точка Ноль
               </span>
-            </a>
+            </button>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.href}
-                  href={link.href}
+                  onClick={() => handleNavClick(link.href)}
                   className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
-              <Button variant="glass-solid" size="sm" onClick={scrollToContact}>
+              <Button variant="glass-solid" size="sm" onClick={() => handleNavClick('contact')}>
                 Начать сдвиг
               </Button>
             </div>
@@ -97,21 +115,23 @@ const GlassNavbar = () => {
           >
             <div className="px-6 pb-6 pt-2 space-y-4 border-t border-white/20">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block text-base font-medium text-foreground/70 hover:text-foreground transition-colors py-2"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    handleNavClick(link.href);
+                  }}
+                  className="block text-base font-medium text-foreground/70 hover:text-foreground transition-colors py-2 w-full text-left"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
               <Button 
                 variant="glass-solid" 
                 className="w-full mt-4"
                 onClick={() => {
                   setIsMenuOpen(false);
-                  scrollToContact();
+                  handleNavClick('contact');
                 }}
               >
                 Начать сдвиг
