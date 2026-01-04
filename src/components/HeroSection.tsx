@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const scrollToContact = () => {
@@ -11,37 +12,64 @@ const HeroSection = () => {
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text Content */}
-          <div 
-            className="space-y-8 animate-fade-in"
-            style={{ animationDelay: "0.2s" }}
+          <motion.div 
+            className="space-y-8"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/30 backdrop-blur-lg border border-white/40">
+            <motion.div 
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/30 backdrop-blur-lg border border-white/40"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-foreground/80">
                 Life Form Engineering
               </span>
-            </div>
+            </motion.div>
 
-            <h1 className="heading-display text-foreground">
+            <motion.h1 
+              className="heading-display text-foreground"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               Точка Ноль — 
               <br />
               <span className="text-primary">
                 Инженер формы личности
               </span>
-            </h1>
+            </motion.h1>
 
-            <p className="text-body text-muted-foreground max-w-xl">
+            <motion.p 
+              className="text-body text-muted-foreground max-w-xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               Точка Ноль — это не путь, не сопровождение и не мотивация. Это один точный сдвиг формы личности, 
               после которого старые схемы мышления больше не работают, а человек остаётся с реальной конфигурацией себя. 
               Ты не получаешь карту пути — ты получаешь очищенную форму, в которой старые ограничения исчезают навсегда.
-            </p>
+            </motion.p>
 
-            <p className="text-body text-muted-foreground max-w-xl">
+            <motion.p 
+              className="text-body text-muted-foreground max-w-xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
               Всё происходит через прямой диалог, где ты остаёшься субъектом изменений, а не объектом воздействия.
               Никаких скрытых техник и манипуляций — только то, что становится очевидным в моменте.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
               <Button 
                 variant="glass-solid" 
                 size="lg" 
@@ -58,13 +86,15 @@ const HeroSection = () => {
               >
                 Узнать больше
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Image/Visual */}
-          <div 
-            className="relative animate-fade-in"
-            style={{ animationDelay: "0.4s" }}
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
           >
             <div className="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none">
               {/* Decorative rings */}
@@ -87,12 +117,17 @@ const HeroSection = () => {
               </div>
 
               {/* Floating badge */}
-              <div className="absolute -bottom-4 -left-4 md:bottom-4 md:-left-8 px-6 py-4 rounded-2xl bg-white/40 backdrop-blur-xl border border-white/50 shadow-xl animate-float-slow">
+              <motion.div 
+                className="absolute -bottom-4 -left-4 md:bottom-4 md:-left-8 px-6 py-4 rounded-2xl bg-white/40 backdrop-blur-xl border border-white/50 shadow-xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
                 <p className="text-sm font-medium text-foreground">точка сдвига</p>
                 <p className="text-xs text-muted-foreground">необратимое изменение формы</p>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
