@@ -81,7 +81,7 @@ const HeroSection = () => {
                 />
                 <img
                   src="https://cdn.poehali.dev/files/photo_2025-11-11_16-02-37.jpeg"
-                  alt="Инженер формы личности"
+                  alt="Точка Ноль — инженер формы личности, сдвиг личностной конфигурации"
                   className="w-full h-full object-cover"
                 />
               </div>
