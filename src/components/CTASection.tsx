@@ -1,78 +1,58 @@
-import { Button } from "@/components/ui/button";
-import GlassCard from "@/components/GlassCard";
 import AnimatedSection from "@/components/AnimatedSection";
 import { MessageCircle, Send } from "lucide-react";
 import { motion } from "framer-motion";
 
 const CTASection = () => {
-  const handleWhatsApp = () => {
-    window.open("https://wa.me/79680601602", "_blank");
-  };
-
-  const handleTelegram = () => {
-    window.open("https://t.me/mureskae", "_blank");
-  };
-
   return (
-    <section className="py-24" id="contact">
-      <div className="container">
+    <section className="py-24 md:py-32 border-t border-border" id="contact">
+      <div className="container max-w-2xl text-center">
         <AnimatedSection>
-          <GlassCard className="p-12 md:p-16 text-center" intensity="strong" hover={false}>
-            <p className="text-body text-muted-foreground max-w-xl mx-auto mb-8">
-              Я не принимаю решений за человека и не задаю направление его жизни.
-              Моя работа заканчивается там, где появляется ясность.
-            </p>
-            
-            <h2 className="heading-section text-foreground mb-6">
-              Как записаться
-            </h2>
-            
-            <p className="text-body text-muted-foreground max-w-xl mx-auto mb-4">
-              Первый разговор — не обязательство.
-            </p>
-            
-            <p className="text-body text-foreground max-w-xl mx-auto mb-8">
-              Он — точка сдвига, которую можно пройти прямо сейчас.
-            </p>
+          <h2 className="heading-section text-foreground mb-6">
+            Начать необратимые изменения
+          </h2>
+        </AnimatedSection>
 
-            <p className="text-foreground font-medium mb-6">
-              Выберите удобный способ связи:
-            </p>
+        <AnimatedSection delay={0.1}>
+          <p className="text-body text-muted-foreground mb-4">
+            Первый разговор — не обязательство.
+          </p>
+          <p className="text-body text-foreground mb-12 font-medium">
+            Он — точка сдвига, которую можно пройти прямо сейчас.
+          </p>
+        </AnimatedSection>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex-1"
-              >
-                <Button
-                  variant="glass"
-                  size="xl"
-                  className="w-full justify-center gap-3"
-                  onClick={handleWhatsApp}
-                >
-                  <MessageCircle className="w-5 h-5 text-green-600" />
-                  WhatsApp
-                </Button>
-              </motion.div>
+        <AnimatedSection delay={0.2}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <motion.a
+              href="https://wa.me/79680601602"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-foreground/80 text-foreground font-semibold text-sm tracking-wide hover:bg-foreground hover:text-background transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <MessageCircle className="w-5 h-5" />
+              Написать в WhatsApp
+            </motion.a>
 
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex-1"
-              >
-                <Button
-                  variant="glass"
-                  size="xl"
-                  className="w-full justify-center gap-3"
-                  onClick={handleTelegram}
-                >
-                  <Send className="w-5 h-5 text-blue-500" />
-                  Telegram
-                </Button>
-              </motion.div>
-            </div>
-          </GlassCard>
+            <motion.a
+              href="https://t.me/mureskae"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-border text-muted-foreground text-sm tracking-wide hover:border-foreground/50 hover:text-foreground transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Send className="w-5 h-5" />
+              Написать в Telegram
+            </motion.a>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.3}>
+          <p className="text-xs text-muted-foreground/50">
+            Отвечаю в течение нескольких часов. Не спамлю, не навязываю.
+          </p>
         </AnimatedSection>
       </div>
     </section>

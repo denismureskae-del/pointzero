@@ -4,113 +4,44 @@
 
 @layer base {
   :root {
-    /* Pastel Cloud Palette */
-    --background: 210 30% 97%;
-    --foreground: 215 25% 27%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
 
-    --card: 210 40% 98%;
-    --card-foreground: 215 25% 27%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 210 40% 98%;
-    --popover-foreground: 215 25% 27%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Azure-blue primary */
-    --primary: 205 70% 50%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 43 100% 50%;
+    --primary-foreground: 0 0% 4%;
 
-    /* Soft gray-blue secondary */
-    --secondary: 210 25% 92%;
-    --secondary-foreground: 215 25% 35%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 80%;
 
-    --muted: 210 20% 94%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 65%;
 
-    /* Light azure accent */
-    --accent: 195 60% 85%;
-    --accent-foreground: 205 50% 30%;
+    --accent: 43 80% 45%;
+    --accent-foreground: 0 0% 4%;
 
     --destructive: 0 72% 51%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 88%;
-    --input: 210 30% 88%;
-    --ring: 205 70% 50%;
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 43 100% 50%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    /* Glassmorphism tokens */
-    --glass-bg: 210 40% 98% / 0.6;
-    --glass-border: 210 30% 95% / 0.8;
-    --glass-blur: 20px;
-    
-    /* Cloud gradient colors */
-    --cloud-1: 210 30% 97%;
-    --cloud-2: 200 35% 92%;
-    --cloud-3: 195 40% 88%;
-    --cloud-azure: 205 50% 80%;
-    --cloud-white: 0 0% 100%;
-
-    /* Animation durations */
-    --animation-slow: 25s;
-    --animation-medium: 18s;
-    --animation-fast: 12s;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 215 35% 12%;
-    --foreground: 210 30% 95%;
-
-    --card: 215 30% 15%;
-    --card-foreground: 210 30% 95%;
-
-    --popover: 215 30% 15%;
-    --popover-foreground: 210 30% 95%;
-
-    --primary: 200 65% 60%;
-    --primary-foreground: 215 35% 12%;
-
-    --secondary: 215 25% 22%;
-    --secondary-foreground: 210 25% 85%;
-
-    --muted: 215 25% 20%;
-    --muted-foreground: 210 20% 60%;
-
-    --accent: 200 40% 30%;
-    --accent-foreground: 200 50% 85%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 215 25% 22%;
-    --input: 215 25% 22%;
-    --ring: 200 65% 60%;
-
-    --glass-bg: 215 30% 15% / 0.7;
-    --glass-border: 215 25% 25% / 0.6;
-
-    --cloud-1: 215 35% 12%;
-    --cloud-2: 210 30% 18%;
-    --cloud-3: 205 25% 22%;
-    --cloud-azure: 200 35% 25%;
-    --cloud-white: 210 20% 30%;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 43 100% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 43 100% 50%;
   }
 }
 
@@ -129,120 +60,25 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Inter', sans-serif;
   }
 }
 
 @layer components {
-  /* Glassmorphism base */
-  .glass {
-    @apply backdrop-blur-xl border border-glass-border;
-    background: hsl(var(--glass-bg));
-    position: relative;
-    overflow: hidden;
-  }
-
-  .glass::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.03;
-    pointer-events: none;
-  }
-
-  .glass-strong {
-    @apply glass;
-    background: hsl(var(--glass-bg));
-    backdrop-filter: blur(30px) saturate(180%);
-  }
-
-  .glass-strong::before {
-    opacity: 0.05;
-  }
-
-  /* Animated cloud background */
-  .cloud-bg {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    overflow: hidden;
-    background: linear-gradient(
-      180deg,
-      hsl(var(--cloud-white)) 0%,
-      hsl(var(--cloud-1)) 30%,
-      hsl(var(--cloud-2)) 60%,
-      hsl(var(--cloud-azure)) 100%
-    );
-  }
-
-  .cloud-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.6;
-    animation: float linear infinite;
-  }
-
-  .cloud-blob-1 {
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, hsl(200 50% 85% / 0.8) 0%, transparent 70%);
-    top: -15%;
-    left: -10%;
-    animation-duration: 30s;
-  }
-
-  .cloud-blob-2 {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, hsl(210 40% 90% / 0.7) 0%, transparent 70%);
-    top: 15%;
-    right: -15%;
-    animation-duration: 25s;
-    animation-delay: -5s;
-  }
-
-  .cloud-blob-3 {
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, hsl(0 0% 100% / 0.6) 0%, transparent 60%);
-    bottom: -25%;
-    left: 25%;
-    animation-duration: 35s;
-    animation-delay: -10s;
-  }
-
-  .cloud-blob-4 {
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, hsl(195 55% 82% / 0.7) 0%, transparent 70%);
-    top: 45%;
-    left: 5%;
-    animation-duration: 20s;
-    animation-delay: -3s;
-  }
-
-  .cloud-blob-5 {
-    width: 650px;
-    height: 650px;
-    background: radial-gradient(circle, hsl(205 45% 88% / 0.65) 0%, transparent 65%);
-    bottom: 5%;
-    right: 0%;
-    animation-duration: 28s;
-    animation-delay: -8s;
-  }
-
-  /* Text styles */
   .heading-display {
-    @apply text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight;
-    font-family: 'Cormorant Garamond', serif;
-    line-height: 1.1;
+    @apply text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.05];
+    font-family: 'Inter', sans-serif;
   }
 
   .heading-section {
-    @apply text-3xl md:text-4xl font-medium tracking-tight;
-    font-family: 'Cormorant Garamond', serif;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.1;
+  }
+
+  .heading-sub {
+    @apply text-xl md:text-2xl font-semibold tracking-tight;
+    font-family: 'Inter', sans-serif;
     line-height: 1.2;
   }
 
@@ -251,67 +87,25 @@
     font-family: 'Inter', sans-serif;
   }
 
-  /* Smooth scroll reveal */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  .text-body-sm {
+    @apply text-sm md:text-base font-light leading-relaxed;
+    font-family: 'Inter', sans-serif;
   }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@layer utilities {
-  .border-glass-border {
-    border-color: hsl(var(--glass-border));
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(30px, -30px) scale(1.05);
-  }
-  50% {
-    transform: translate(-20px, 20px) scale(0.95);
-  }
-  75% {
-    transform: translate(40px, 10px) scale(1.02);
+  /* Divider */
+  .section-divider {
+    @apply w-16 h-px bg-primary/40 mx-auto;
   }
 }
 
 @keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slide-down {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -30px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(40px, 10px) scale(1.02); }
 }
