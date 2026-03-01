@@ -61,7 +61,7 @@ const ServicesSection = () => {
                 {service.description}
               </p>
               <Button 
-                variant="glass" 
+                variant="outline" 
                 size="lg"
                 className="w-full mt-auto"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}

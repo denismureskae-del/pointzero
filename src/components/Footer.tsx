@@ -1,47 +1,33 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
   return (
-    <footer className="py-12 border-t border-white/20">
+    <footer className="py-12 border-t border-border">
       <div className="container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            <img 
-              src={logo} 
-              alt="Точка Ноль" 
-              className="w-10 h-10 rounded-xl shadow-lg object-cover"
-            />
-            <span className="font-serif text-xl font-medium text-foreground">
-              Точка Ноль
-            </span>
-          </div>
+          <span className="text-foreground font-bold text-sm tracking-wider uppercase">
+            Точка Ноль
+          </span>
 
-          {/* Links */}
           <nav className="flex flex-wrap justify-center gap-8">
-            <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              О себе
+            <a href="#about" className="text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider">
+              О методе
             </a>
-            <a href="#method" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Метод
-            </a>
-            <a href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#services" className="text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider">
               Услуги
             </a>
-            <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#contact" className="text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider">
               Запись
             </a>
           </nav>
 
-          {/* Copyright */}
           <div className="text-center md:text-right">
-            <p className="text-sm text-muted-foreground">
-              Все права защищены. © 2025-2027
+            <p className="text-xs text-muted-foreground/60">
+              © 2025–2027 Точка Ноль. Все права защищены.
             </p>
             <Link 
               to="/legal" 
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
+              className="text-xs text-muted-foreground/60 hover:text-foreground transition-colors"
             >
               Правовые документы
             </Link>

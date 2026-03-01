@@ -1,134 +1,73 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { ArrowDown } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToMethod = () => {
+    document.getElementById('what-is')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="min-h-screen flex items-center pt-32 pb-20">
-      <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text Content */}
-          <motion.div 
-            className="space-y-8"
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
+    <section className="min-h-screen flex items-center justify-center relative px-4">
+      {/* Subtle gradient glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      
+      <div className="max-w-3xl mx-auto text-center relative z-10">
+        <motion.p
+          className="text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Life Form Engineering
+        </motion.p>
+
+        <motion.h1 
+          className="heading-display text-foreground mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+        >
+          Вы не сломаны.
+          <br />
+          <span className="text-muted-foreground font-light">
+            Ваша старая форма просто устарела.
+          </span>
+        </motion.h1>
+
+        <motion.p 
+          className="text-body text-muted-foreground max-w-xl mx-auto mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          Точка Ноль — это один разговор, после которого старые проблемы теряют власть. 
+          Никакой «поддержки» и «сопровождения». Только инженерная очистка личности.
+        </motion.p>
+
+        <motion.div 
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+        >
+          <button
+            onClick={scrollToContact}
+            className="px-8 py-4 border border-foreground/80 text-foreground font-semibold text-sm tracking-wide hover:bg-foreground hover:text-background transition-all duration-300"
           >
-            <motion.div 
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/30 backdrop-blur-lg border border-white/40"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-foreground/80">
-                Life Form Engineering
-              </span>
-            </motion.div>
-
-            <motion.h1 
-              className="heading-display text-foreground"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              Точка Ноль — 
-              <br />
-              <span className="text-primary">
-                Инженер формы личности
-              </span>
-            </motion.h1>
-
-            <motion.p 
-              className="text-body text-muted-foreground max-w-xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              Точка Ноль — это не путь, не сопровождение и не мотивация. Это один точный сдвиг формы личности, 
-              после которого старые схемы мышления больше не работают, а человек остаётся с реальной конфигурацией себя. 
-              Ты не получаешь карту пути — ты получаешь очищенную форму, в которой старые ограничения исчезают навсегда.
-            </motion.p>
-
-            <motion.p 
-              className="text-body text-muted-foreground max-w-xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              Всё происходит через прямой диалог, где ты остаёшься субъектом изменений, а не объектом воздействия.
-              Никаких скрытых техник и манипуляций — только то, что становится очевидным в моменте.
-            </motion.p>
-
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <Button 
-                variant="glass-solid" 
-                size="lg" 
-                className="group"
-                onClick={scrollToContact}
-              >
-                Начать сдвиг
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button 
-                variant="glass" 
-                size="lg"
-                onClick={() => document.getElementById('method')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Узнать больше
-              </Button>
-            </motion.div>
-          </motion.div>
-
-          {/* Image/Visual */}
-          <motion.div 
-            className="relative"
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
+            → Проверить, сработает ли это на мне
+          </button>
+          <button
+            onClick={scrollToMethod}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-2"
           >
-            <div className="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none">
-              {/* Decorative rings */}
-              <div className="absolute inset-0 rounded-3xl border-2 border-primary/10 animate-pulse-slow" />
-              <div className="absolute inset-4 rounded-3xl border border-primary/20" />
-              
-              {/* Glass frame */}
-              <div className="absolute inset-8 rounded-2xl overflow-hidden bg-white/30 backdrop-blur-xl border border-white/40 shadow-2xl">
-                <div 
-                  className="absolute inset-0 opacity-[0.03]"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-                  }}
-                />
-                <img
-                  src="https://cdn.poehali.dev/files/photo_2025-11-11_16-02-37.jpeg"
-                  alt="Точка Ноль — инженер формы личности, сдвиг личностной конфигурации"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Floating badge */}
-              <motion.div 
-                className="absolute -bottom-4 -left-4 md:bottom-4 md:-left-8 px-6 py-4 rounded-2xl bg-white/40 backdrop-blur-xl border border-white/50 shadow-xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-              >
-                <p className="text-sm font-medium text-foreground">точка сдвига</p>
-                <p className="text-xs text-muted-foreground">необратимое изменение формы</p>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
+            Узнать, как это работает
+            <ArrowDown className="w-4 h-4" />
+          </button>
+        </motion.div>
       </div>
     </section>
   );
