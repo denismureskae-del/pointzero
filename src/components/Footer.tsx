@@ -29,7 +29,7 @@ const Footer = () => {
               to="/legal" 
               className="text-xs text-muted-foreground/60 hover:text-foreground transition-colors"
             >
-              Правовые документы
+              Политика конфиденциальности
             </Link>
           </div>
         </div>
