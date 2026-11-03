@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logoMark from "@/assets/logo-mark.png.asset.json";
 
 const navLinks = [
   { href: "what-is", label: "Метод" },
@@ -49,8 +50,11 @@ const GlassNavbar = () => {
     >
       <div className="container">
         <div className="flex items-center justify-between h-16">
-          <button onClick={handleLogoClick} className="text-foreground font-bold text-sm tracking-wider uppercase">
-            Точка Ноль
+          <button onClick={handleLogoClick} className="flex items-center gap-2.5">
+            <img src={logoMark.url} alt="Логотип Точка Ноль" className="h-8 w-auto" />
+            <span className="text-foreground font-bold text-sm tracking-wider uppercase">
+              Точка Ноль
+            </span>
           </button>
 
           {/* Desktop */}
