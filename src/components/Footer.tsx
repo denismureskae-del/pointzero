@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
+import logoMark from "@/assets/logo-mark.png";
 
 const Footer = () => {
   return (
     <footer className="py-12 border-t border-border">
       <div className="container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <span className="text-foreground font-bold text-sm tracking-wider uppercase">
-            Точка Ноль
-          </span>
+          <div className="flex items-center gap-2.5">
+            <img src={logoMark} alt="Логотип Точка Ноль" className="h-7 w-auto" />
+            <span className="text-foreground font-bold text-sm tracking-wider uppercase">
+              Точка Ноль
+            </span>
+          </div>
 
           <nav className="flex flex-wrap justify-center gap-8">
             <a href="#about" className="text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-wider">
