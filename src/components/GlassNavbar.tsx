@@ -51,7 +51,7 @@ const GlassNavbar = () => {
       <div className="container">
         <div className="flex items-center justify-between h-16">
           <button onClick={handleLogoClick} className="flex items-center gap-2.5">
-            <img src={logoMark.url} alt="Логотип Точка Ноль" className="h-8 w-auto" />
+            <img src={logoMark} alt="Логотип Точка Ноль" className="h-8 w-auto" />
             <span className="text-foreground font-bold text-sm tracking-wider uppercase">
               Точка Ноль
             </span>

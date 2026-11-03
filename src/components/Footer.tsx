@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2.5">
-            <img src={logoMark.url} alt="Логотип Точка Ноль" className="h-7 w-auto" />
+            <img src={logoMark} alt="Логотип Точка Ноль" className="h-7 w-auto" />
             <span className="text-foreground font-bold text-sm tracking-wider uppercase">
               Точка Ноль
             </span>
