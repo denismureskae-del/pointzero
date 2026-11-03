@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logoMark from "@/assets/logo-mark.png.asset.json";
+import logoMark from "@/assets/logo-mark.png";
 
 const navLinks = [
   { href: "what-is", label: "Метод" },
